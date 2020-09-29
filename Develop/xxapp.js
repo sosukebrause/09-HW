@@ -1,12 +1,7 @@
 const inquirer = require("inquirer");
-const api = require("./utils/api.js");
 const fs = require("fs");
-const util = require("util");
-// const generateMarkdown = require("./utils/generateMarkdown.js");
 const config = { headers: { accept: "application/json" } };
 const axios = require("axios");
-
-const appendFileAsync = util.promisify(fs.appendFile);
 
 inquirer
   .prompt([
@@ -15,11 +10,6 @@ inquirer
       name: "username",
       message: "What is your username?",
     },
-    // {
-    //   type: "input",
-    //   name: "title",
-    //   message: "what is your project",
-    // },
     {
       type: "list",
       name: "license",

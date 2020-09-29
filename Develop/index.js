@@ -28,13 +28,18 @@ const questions = [
   },
   {
     type: "input",
-    message: "Enter any other installations required to run application",
+    message: "Enter any other tools required to run application",
     name: "install",
   },
   {
     type: "input",
     message: "What is the intended use of this project?",
     name: "usage",
+  },
+  {
+    type: "input",
+    message: "Enter commands necessary to test this application",
+    name: "test",
   },
   {
     type: "list",
@@ -67,8 +72,8 @@ function init() {
         "myREADME.md",
         generateMarkdown({ ...userResponse, ...gitResponse.data })
       );
-      console.log(userResponse);
-      // console.log(gitResponse.data);
+      // console.log(userResponse);
+      console.log(gitResponse.data);
       console.log("File created");
     });
   });

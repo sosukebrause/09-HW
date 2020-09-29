@@ -1,23 +1,42 @@
 function generateMarkdown(data) {
-  console.log(data.avatar_url);
-
   return `
 <img src = "${data.avatar_url}" />
-
-  # GitHub Name:  ${data.github} 
-  ## Repo Name (project title): ${data.title}
-  - Repos: ${data.url} 
+<br>
+Licenses: ![license type](https://img.shields.io/badge/License-${data.license}-yellow)
+  
+  Github UserName: ${data.github}
+  ***
+  # Repo Name ${data.title} 
+  
   ## Description: 
     ${data.desc}
-  ## Requirements: 
-  - License: ${data.license}
-  - Installation requirements: ${data.install}
-  - Node packages: ${data.npm}
+  ***
+  ## Contents
+  - [Motivation](#Description)
+  - [How to install](#Requirements)
+  - [How to use](#Usage)
+  - [Contributors](#Contributors)
+  - [How to test](#Testing)
+  - [Additional Info](#Additional)
+  - [Licenses](#Licenses)
+  ***
+
   ## Usage: 
   - ${data.usage}
-  ### Contributors: ${data.contributorRes}
-    ### Email: ${data.email}
+
+  ## Requirements: 
+  **Installations**: ${data.npm}
+  <em>Other</em>: ${data.install}
   
+  ## Testing: 
+  **To test this application:** ${data.test}
+
+  
+  ### Contributors: 
+  - ${data.contributorRes}
+  ### Additional 
+  - Contact: ${data.email}
+  - GitHub Profile: ${data.html_url}
 `;
 }
 module.exports = generateMarkdown;
